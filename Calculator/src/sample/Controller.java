@@ -109,7 +109,7 @@ public class Controller {
 
         else {
 
-            int temp = (int) num2;
+            int temp = (int)num2;
             num2 = Double.parseDouble(temp + "3");
             lblDisplay.setText(Double.toString(num2));
 
@@ -237,48 +237,100 @@ public class Controller {
 
     }
 
+    public void doOperation() {
+
+        boolean temp = false;
+
+        if (add) {
+
+            total = num + num2;
+            add = false;
+            temp = true;
+
+        }
+
+        else if (subtract) {
+
+            total = num - num2;
+            temp = true;
+
+        }
+
+        else if (multiply) {
+
+            total = num * num2;
+            temp = true;
+
+        }
+
+        else if (divide) {
+
+            total = num / num2;
+            temp = true;
+
+        }
+
+        if (temp) {
+
+            lblDisplay.setText(Double.toString(total));
+            num = total;
+            num2 = 0;
+            total = 0;
+
+            add = false;
+            subtract = false;
+            multiply = false;
+            divide = false;
+
+        }
+
+    }
+
     public void setBtnAdd(ActionEvent actionEvent) {
+
+        doOperation();
 
         operationPressed = true;
         add = true;
         subtract = false;
         multiply = false;
         divide = false;
-        lblDisplay.setText(Double.toString(0));
 
     }
 
     public void setBtnSubtract(ActionEvent actionEvent) {
+
+        doOperation();
 
         operationPressed = true;
         add = false;
         subtract = true;
         multiply = false;
         divide = false;
-        lblDisplay.setText(Double.toString(0));
 
     }
 
     public void setBtnMultiply(ActionEvent actionEvent) {
+
+        doOperation();
 
         operationPressed = true;
         add = false;
         subtract = false;
         multiply = true;
         divide = false;
-        lblDisplay.setText(Double.toString(0));
 
     }
 
     public void setBtnDivide(ActionEvent actionEvent) {
+
+        doOperation();
 
         operationPressed = true;
         add = false;
         subtract = false;
         multiply = false;
         divide = true;
-        lblDisplay.setText(Double.toString(0));
-
     }
 
     public void setBtnEqual(ActionEvent actionEvent) {
