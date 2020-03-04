@@ -349,7 +349,7 @@ public class Controller {
         multiply = false;
         divide = false;
         dot = false;
-        sqrt = false
+        sqrt = false;
 
     }
 
