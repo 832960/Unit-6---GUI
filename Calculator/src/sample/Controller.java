@@ -4,14 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+@SuppressWarnings("Duplicates")
+
 public class Controller {
 
     public Label lblDisplay;
     public Button btnAC;
     public Button btnPercent;
-    public Button btnLeftBracket;
-    public Button btnRightBracket;
     public Button btnEqual;
+    public Button btnSqrt;
     public Button btnDivide;
     public Button btnMultiply;
     public Button btnSubtract;
@@ -36,209 +37,145 @@ public class Controller {
     public boolean subtract = false;
     public boolean multiply = false;
     public boolean divide = false;
+    public boolean sqrt = false;
+    public boolean dot = false;
 
-    public void setBtn0(javafx.event.ActionEvent actionEvent) {
+    public void doBtn(String btnNum) {
 
         if (!operationPressed) {
 
-            int temp = (int)num;
-            num = Double.parseDouble(temp + "0");
-            lblDisplay.setText(Double.toString(num));
+            if (!dot) {
+
+                int temp = (int)num;
+                double temp2 = num - temp;
+                num = Double.parseDouble(temp + btnNum);
+                num += temp2;
+                lblDisplay.setText(Double.toString(num));
+
+            }
+
+            else {
+
+                int test = (int)num;
+                if ((double)test == num) {
+
+                    int temp = (int)num;
+                    num = Double.parseDouble(temp + "." + btnNum);
+                    lblDisplay.setText(Double.toString(num));
+
+                }
+
+                else {
+
+                    num = Double.parseDouble(num + btnNum);
+                    lblDisplay.setText(Double.toString(num));
+
+                }
+
+            }
 
         }
 
         else {
 
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "0");
-            lblDisplay.setText(Double.toString(num2));
+            if (!dot) {
+
+                int temp = (int)num2;
+                double temp2 = num2 - temp;
+                num2 = Double.parseDouble(temp + btnNum);
+                num2 += temp2;
+                lblDisplay.setText(Double.toString(num2));
+
+            }
+
+            else {
+
+                int test = (int)num2;
+                if ((double)test == num2) {
+
+                    int temp = (int)num2;
+                    num2 = Double.parseDouble(temp + "." + btnNum);
+                    lblDisplay.setText(Double.toString(num2));
+
+                }
+
+                else {
+
+                    num2 = Double.parseDouble(num2 + btnNum);
+                    lblDisplay.setText(Double.toString(num2));
+
+                }
+
+            }
 
         }
+
+    }
+
+    public void setBtn0(javafx.event.ActionEvent actionEvent) {
+
+        doBtn("0");
 
     }
 
     public void setBtn1(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "1");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "1");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("1");
 
     }
 
     public void setBtn2(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "2");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "2");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("2");
 
     }
 
     public void setBtn3(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "3");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int)num2;
-            num2 = Double.parseDouble(temp + "3");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("3");
 
     }
 
     public void setBtn4(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "4");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "4");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("4");
 
     }
 
     public void setBtn5(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "5");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "5");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("5");
 
     }
 
     public void setBtn6(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "6");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "6");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("6");
 
     }
 
     public void setBtn7(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "7");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "7");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("7");
 
     }
 
     public void setBtn8(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-        int temp = (int)num;
-        num = Double.parseDouble(temp + "8");
-        lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "8");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("8");
 
     }
 
     public void setBtn9(javafx.event.ActionEvent actionEvent) {
 
-        if (!operationPressed) {
-
-            int temp = (int) num;
-            num = Double.parseDouble(temp + "9");
-            lblDisplay.setText(Double.toString(num));
-
-        }
-
-        else {
-
-            int temp = (int) num2;
-            num2 = Double.parseDouble(temp + "9");
-            lblDisplay.setText(Double.toString(num2));
-
-        }
+        doBtn("9");
 
     }
 
     public void doOperation() {
 
+        lblDisplay.setText(Double.toString(0));
+        operationPressed = true;
         boolean temp = false;
 
         if (add) {
@@ -270,6 +207,13 @@ public class Controller {
 
         }
 
+        else if (sqrt) {
+
+            total = Math.sqrt(num);
+            temp = true;
+
+        }
+
         if (temp) {
 
             lblDisplay.setText(Double.toString(total));
@@ -281,6 +225,8 @@ public class Controller {
             subtract = false;
             multiply = false;
             divide = false;
+            dot = false;
+            sqrt = false;
 
         }
 
@@ -290,11 +236,12 @@ public class Controller {
 
         doOperation();
 
-        operationPressed = true;
         add = true;
         subtract = false;
         multiply = false;
         divide = false;
+        dot = false;
+        sqrt = false;
 
     }
 
@@ -302,11 +249,12 @@ public class Controller {
 
         doOperation();
 
-        operationPressed = true;
         add = false;
         subtract = true;
         multiply = false;
         divide = false;
+        dot = false;
+        sqrt = false;
 
     }
 
@@ -314,11 +262,12 @@ public class Controller {
 
         doOperation();
 
-        operationPressed = true;
         add = false;
         subtract = false;
         multiply = true;
         divide = false;
+        dot = false;
+        sqrt = false;
 
     }
 
@@ -326,11 +275,19 @@ public class Controller {
 
         doOperation();
 
-        operationPressed = true;
         add = false;
         subtract = false;
         multiply = false;
         divide = true;
+        dot = false;
+        sqrt = false;
+
+    }
+
+    public void setBtnSqrt(ActionEvent actionEvent) {
+
+
+
     }
 
     public void setBtnEqual(ActionEvent actionEvent) {
@@ -359,6 +316,12 @@ public class Controller {
 
         }
 
+        else if (sqrt) {
+
+            total = Math.sqrt(num);
+
+        }
+
         lblDisplay.setText(Double.toString(total));
         num = total;
         num2 = 0;
@@ -369,6 +332,8 @@ public class Controller {
         subtract = false;
         multiply = false;
         divide = false;
+        dot = false;
+        sqrt = false;
 
     }
 
@@ -383,30 +348,33 @@ public class Controller {
         subtract = false;
         multiply = false;
         divide = false;
+        dot = false;
+        sqrt = false
 
     }
 
     public void setBtnDot(ActionEvent actionEvent) {
 
-
-
-    }
-
-    public void setBtnLeftBracket(ActionEvent actionEvent) {
-
-
-
-    }
-
-    public void setBtnRightBracket(ActionEvent actionEvent) {
-
-
+        dot = !dot;
 
     }
 
     public void setBtnPercent(ActionEvent actionEvent) {
 
+        boolean temp = false;
+        boolean temp2 = false;
 
+        if (!operationPressed) {
+
+            num /= 100;
+
+        }
+
+        else {
+
+            num2 /= 100;
+
+        }
 
     }
 

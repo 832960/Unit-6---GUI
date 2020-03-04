@@ -19,12 +19,12 @@
       </HBox>
       <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="btnLeftBracket" mnemonicParsing="false" onAction="#setBtnLeftBracket" prefHeight="157.0" prefWidth="91.0" text="(">
+            <Button fx:id="btnSqrt" mnemonicParsing="false" onAction="#setBtnSqrt" prefHeight="157.0" prefWidth="91.0" text="√">
                <font>
                   <Font size="34.0" />
                </font>
             </Button>
-            <Button fx:id="btnRightBracket" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBtnRightBracket" prefHeight="157.0" prefWidth="91.0" text=")">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="157.0" prefWidth="91.0">
                <font>
                   <Font size="34.0" />
                </font>
