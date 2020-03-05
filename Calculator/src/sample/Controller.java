@@ -359,6 +359,12 @@ public class Controller {
 
         }
 
+        else {
+
+            total = num;
+
+        }
+
         doneOperation();
         operationPressed = false;
 
