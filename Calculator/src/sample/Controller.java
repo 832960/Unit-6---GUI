@@ -226,20 +226,7 @@ public class Controller {
 
         if (temp) {
 
-            lblDisplay.setText(Double.toString(total));
-            num = total;
-            num2 = 0;
-            total = 0;
-
-            add = false;
-            subtract = false;
-            multiply = false;
-            divide = false;
-            dot = false;
-            sqrt = false;
-            sq = false;
-            percentNum = false;
-            percentNum2 = false;
+            doneOperation();
 
         }
 
@@ -295,25 +282,46 @@ public class Controller {
 
     public void setBtnPercent(ActionEvent actionEvent) {
 
-        if (!percentNum) {
+        if (num != 0 || total != 0) {
 
-            if (total == 0) {
+            if (!percentNum) {
 
-                num /= 100;
-                total = num;
+                if (total == 0) {
+
+                    num /= 100;
+                    total = num;
+
+                } else {
+
+                    total /= 100;
+
+                }
+
+                percentNum = true;
+                lblDisplay.setText(Double.toString(total));
 
             }
-
-            else {
-
-                total /= 100;
-
-            }
-
-            percentNum = true;
-            lblDisplay.setText(Double.toString(total));
 
         }
+
+    }
+
+    public void doneOperation() {
+
+        lblDisplay.setText(Double.toString(total));
+        num = total;
+        num2 = 0;
+        total = 0;
+
+        add = false;
+        subtract = false;
+        multiply = false;
+        divide = false;
+        dot = false;
+        sqrt = false;
+        sq = false;
+        percentNum = false;
+        percentNum2 = false;
 
     }
 
@@ -349,21 +357,8 @@ public class Controller {
 
         }
 
-        lblDisplay.setText(Double.toString(total));
-        num = total;
-        num2 = 0;
-        total = 0;
-
+        doneOperation();
         operationPressed = false;
-        add = false;
-        subtract = false;
-        multiply = false;
-        divide = false;
-        dot = false;
-        sqrt = false;
-        sq = false;
-        percentNum = false;
-        percentNum2 = false;
 
     }
 
