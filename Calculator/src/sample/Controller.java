@@ -291,7 +291,9 @@ public class Controller {
                     num /= 100;
                     total = num;
 
-                } else {
+                }
+
+                else {
 
                     total /= 100;
 
