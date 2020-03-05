@@ -24,7 +24,7 @@
                   <Font size="34.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="157.0" prefWidth="91.0">
+            <Button fx:id="btnSq" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBtnSq" prefHeight="157.0" prefWidth="91.0" text="x²">
                <font>
                   <Font size="34.0" />
                </font>

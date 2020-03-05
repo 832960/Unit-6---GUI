@@ -13,6 +13,7 @@ public class Controller {
     public Button btnPercent;
     public Button btnEqual;
     public Button btnSqrt;
+    public Button btnSq;
     public Button btnDivide;
     public Button btnMultiply;
     public Button btnSubtract;
@@ -39,6 +40,9 @@ public class Controller {
     public boolean divide = false;
     public boolean sqrt = false;
     public boolean dot = false;
+    public boolean percentNum = false;
+    public boolean percentNum2 = false;
+    public boolean sq = false;
 
     public void doBtn(String btnNum) {
 
@@ -181,7 +185,6 @@ public class Controller {
         if (add) {
 
             total = num + num2;
-            add = false;
             temp = true;
 
         }
@@ -214,6 +217,13 @@ public class Controller {
 
         }
 
+        else if (sq) {
+
+            total = Math.pow(num, 2);
+            temp = true;
+
+        }
+
         if (temp) {
 
             lblDisplay.setText(Double.toString(total));
@@ -227,6 +237,9 @@ public class Controller {
             divide = false;
             dot = false;
             sqrt = false;
+            sq = false;
+            percentNum = false;
+            percentNum2 = false;
 
         }
 
@@ -237,11 +250,6 @@ public class Controller {
         doOperation();
 
         add = true;
-        subtract = false;
-        multiply = false;
-        divide = false;
-        dot = false;
-        sqrt = false;
 
     }
 
@@ -249,12 +257,7 @@ public class Controller {
 
         doOperation();
 
-        add = false;
         subtract = true;
-        multiply = false;
-        divide = false;
-        dot = false;
-        sqrt = false;
 
     }
 
@@ -262,12 +265,7 @@ public class Controller {
 
         doOperation();
 
-        add = false;
-        subtract = false;
         multiply = true;
-        divide = false;
-        dot = false;
-        sqrt = false;
 
     }
 
@@ -275,18 +273,47 @@ public class Controller {
 
         doOperation();
 
-        add = false;
-        subtract = false;
-        multiply = false;
         divide = true;
-        dot = false;
-        sqrt = false;
 
     }
 
     public void setBtnSqrt(ActionEvent actionEvent) {
 
+        sqrt = true;
 
+        doOperation();
+
+    }
+
+    public void setBtnSq(ActionEvent actionEvent) {
+
+        sq = true;
+
+        doOperation();
+
+    }
+
+    public void setBtnPercent(ActionEvent actionEvent) {
+
+        if (!percentNum) {
+
+            if (total == 0) {
+
+                num /= 100;
+                total = num;
+
+            }
+
+            else {
+
+                total /= 100;
+
+            }
+
+            percentNum = true;
+            lblDisplay.setText(Double.toString(total));
+
+        }
 
     }
 
@@ -334,6 +361,9 @@ public class Controller {
         divide = false;
         dot = false;
         sqrt = false;
+        sq = false;
+        percentNum = false;
+        percentNum2 = false;
 
     }
 
@@ -350,31 +380,14 @@ public class Controller {
         divide = false;
         dot = false;
         sqrt = false;
+        percentNum = false;
+        percentNum2 = false;
 
     }
 
     public void setBtnDot(ActionEvent actionEvent) {
 
-        dot = !dot;
-
-    }
-
-    public void setBtnPercent(ActionEvent actionEvent) {
-
-        boolean temp = false;
-        boolean temp2 = false;
-
-        if (!operationPressed) {
-
-            num /= 100;
-
-        }
-
-        else {
-
-            num2 /= 100;
-
-        }
+        dot = true;
 
     }
 
