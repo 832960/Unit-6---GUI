@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="GUILesson">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUILesson/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUILesson/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUILesson/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUILesson/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUILesson/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUILesson/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +200,8 @@
       <workItem from="1583434079375" duration="2720000" />
       <workItem from="1583436848006" duration="42000" />
       <workItem from="1583457961308" duration="411000" />
+      <workItem from="1583459966029" duration="79000" />
+      <workItem from="1583460067812" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="GUILesson">
       <created>1582740918751</created>
