@@ -12,7 +12,7 @@ public class Controller {
     public TextField textPhone;
     public TextField textEmail;
     public TextField textAddress;
-    public ListView<> friendList;
+    public ListView friendList;
     public Label lblName;
     public Label lblPhone;
     public Label lblEmail;
