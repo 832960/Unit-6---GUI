@@ -24,7 +24,7 @@ public class Controller {
     public void addFriend(ActionEvent actionEvent) {
 
         String name = textGetName.getText();
-        String phoneNumber = textGetPhone.getText();
+        long phoneNumber = Long.parseLong(textGetPhone.getText());
         String email = textGetEmail.getText();
         String address = textGetAddress.getText();
 
@@ -46,7 +46,7 @@ public class Controller {
         FriendBook temp;
         temp = friendList.getSelectionModel().getSelectedItem();
         lblName.setText(temp.name);
-        lblPhone.setText(temp.getPhoneNumber());
+        lblPhone.setText(Long.toString(temp.getPhoneNumber()));
         lblEmail.setText(temp.getEmail());
         lblAddress.setText(temp.getAddress());
 
@@ -57,6 +57,17 @@ public class Controller {
 
     public void delFriend(ActionEvent actionEvent) {
 
+        FriendBook temp;
+        temp = friendList.getSelectionModel().getSelectedItem();
+        friendList.getItems().remove(temp);
+
+        lblName.setText("");
+        lblPhone.setText("");
+        lblEmail.setText("");
+        lblAddress.setText("");
+
+        btnEditFriend.setDisable(true);
+        btnDelFriend.setDisable(true);
 
 
     }
