@@ -74,7 +74,7 @@ public class Controller {
 
     public void editFriend(ActionEvent actionEvent) {
 
-
+        
 
     }
 
