@@ -23,18 +23,10 @@ public class Product {
 
     public int getQuantity() { return quantity; }
 
-    public void purchase() {
-
-        quantity--;
-
-    }
+    public void purchase() { quantity--; }
 
     public double getCost() { return cost; }
 
-    public String toString() {
-
-        return name;
-
-    }
+    public String toString() { return name; }
 
 }
