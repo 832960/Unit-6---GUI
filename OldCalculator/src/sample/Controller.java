@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.org.apache.regexp.internal.RE;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -60,16 +61,14 @@ public class Controller {
 
             else {
 
-                int test = (int)num;
-                if ((double)test == num) {
+                int test = (int) num;
+                if ((double) test == num) {
 
-                    int temp = (int)num;
+                    int temp = (int) num;
                     num = Double.parseDouble(temp + "." + btnNum);
                     lblDisplay.setText(Double.toString(num));
 
-                }
-
-                else {
+                } else {
 
                     num = Double.parseDouble(num + btnNum);
                     lblDisplay.setText(Double.toString(num));
