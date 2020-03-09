@@ -18,7 +18,6 @@ public class Controller {
     public Label lblPhone;
     public Label lblEmail;
     public Label lblAddress;
-    public Button btnEditFriend;
     public Button btnDelFriend;
 
     public void addFriend(ActionEvent actionEvent) {
@@ -36,7 +35,6 @@ public class Controller {
         textGetEmail.clear();
         textGetAddress.clear();
 
-        btnEditFriend.setDisable(true);
         btnDelFriend.setDisable(true);
 
     }
@@ -50,7 +48,6 @@ public class Controller {
         lblEmail.setText(temp.getEmail());
         lblAddress.setText(temp.getAddress());
 
-        btnEditFriend.setDisable(false);
         btnDelFriend.setDisable(false);
 
     }
@@ -66,15 +63,7 @@ public class Controller {
         lblEmail.setText("");
         lblAddress.setText("");
 
-        btnEditFriend.setDisable(true);
         btnDelFriend.setDisable(true);
-
-
-    }
-
-    public void editFriend(ActionEvent actionEvent) {
-
-        
 
     }
 
